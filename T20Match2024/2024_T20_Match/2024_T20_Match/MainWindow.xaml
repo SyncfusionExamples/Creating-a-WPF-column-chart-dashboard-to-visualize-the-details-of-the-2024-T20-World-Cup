@@ -1,0 +1,220 @@
+﻿<Window x:Class="_2024_T20_Match.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2024_T20_Match"
+        xmlns:chart="clr-namespace:Syncfusion.UI.Xaml.Charts;assembly=Syncfusion.SfChart.WPF"
+        xmlns:comboBox="http://schemas.syncfusion.com/wpf" 
+        mc:Ignorable="d" Title="MainWindow" >
+
+    <Window.DataContext>
+        <local:T20_Data x:Name="viewModel" />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <Geometry x:Key="PathData1">M20.010979,15.57895C22.308049,15.57895 24.205029,17.475947 24.205029,19.772934 24.205029,22.069924 22.308049,23.967926 20.010979,23.967926 17.713973,23.967926 15.816016,22.069924 15.816016,19.772934 15.816016,17.475947 17.713973,15.57895 20.010979,15.57895z M2.8339044,0C3.5329429,0,4.2319203,0.20001144,4.7309462,1.0989948L7.5279551,6.1919931C7.5279551,6.1919931 7.9269439,7.988983 10.023938,7.1899751 10.023938,7.1899751 11.222978,6.4910029 12.220969,8.2889703L16.015967,15.678956 15.915991,15.778962C14.918002,16.776944 14.218963,18.274954 14.218963,19.87294 14.218963,23.068913 16.814982,25.664912 20.010979,25.664912 20.309992,25.664912 20.609982,25.664912 20.910031,25.564905L21.009032,25.564905C21.208983,26.563925 21.208983,27.562914 20.510005,28.461897 20.510005,28.461897 18.512988,31.257906 14.717989,31.956879 14.717989,31.956879 11.621967,32.455901 10.52394,30.058907L1.8349377,13.381968C1.8349377,13.381968 1.035923,11.783983 2.4349156,10.984974 2.4349159,10.984974 4.2319203,9.9869617 2.7339283,8.2889703L0.037932803,3.0959967C0.037932844,3.0959965 -0.36209329,0.99901965 1.4359488,0.20001126 1.5359251,0.30001717 2.1349267,0 2.8339044,0z
+        </Geometry>
+
+        <Geometry x:Key="PathData2"  >M10.42167,25.733974L21.693511,25.733974 23.089492,31.219968 9.0256896,31.219968z M25.682455,4.4889958L25.682455,4.5879955C25.483458,6.9819931 25.084463,9.9749901 24.086477,12.966987 24.386473,12.966987 28.675413,13.365987 30.171391,5.7849941 30.071393,5.8849942 30.27139,4.4889957 28.87441,4.4889958L28.774411,4.4889958z M3.1407728,4.4889958C1.7437916,4.4889957 1.9437895,5.8849942 1.9437895,5.8849943 3.3397694,12.766987 7.0307174,13.066987 7.8287063,13.066987 7.1307163,10.871989 6.5317245,8.1789919 6.3327274,4.7879953L6.3327274,4.4889958 3.3397694,4.4889958z M6.232729,0L25.682455,0C25.682455,0,25.782454,0.89799929,25.782454,2.4939973L25.782454,2.6929972 28.974408,2.6929972C28.974408,2.6929975 32.365361,2.9919972 31.966367,5.8849943 31.966367,5.8849942 30.806497,15.067173 23.729957,14.973529L23.400065,14.962376 23.515435,14.692866C23.574677,14.550345,23.63236,14.407361,23.688483,14.263986L23.787481,13.864986 23.388487,14.961985 23.400065,14.962376 23.333035,15.118966C22.460016,17.100264,21.281517,18.976481,19.797538,20.547979L18.401557,20.547979 18.401557,24.137975 13.813622,24.137975 13.813622,20.547979 12.51664,20.547979C12.51664,20.547979,10.521668,19.050981,8.8256922,15.160985L8.7266936,14.961985 8.4266977,14.961985C1.2457991,15.160985 0.048815727,5.8849942 0.048815727,5.8849943 -0.45017719,2.8929973 3.0407734,2.6929975 3.0407734,2.6929972L6.232729,2.6929972 6.232729,2.1939979z
+        </Geometry>
+
+        <local:ImagePathConverter x:Key="ImagePathConverter"/>
+    </Window.Resources>
+
+    <Border Margin="20" Padding="7" BorderThickness="2" CornerRadius="10" Background="#48944b" BorderBrush="#b0b8bf">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="2" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                <chart:SfChart HorizontalHeaderAlignment="Left">
+
+                    <chart:SfChart.Header>
+                        <Label Content="Top Runs Scorers" FontSize="15" Margin="5,0,0,0" FontWeight="SemiBold" Foreground="White"/>
+                    </chart:SfChart.Header>
+
+                    <chart:SfChart.Behaviors>
+                        <chart:ChartZoomPanBehavior EnableMouseWheelZooming="False" EnablePinchZooming="False"
+                                                    ResetOnDoubleTap="False" EnablePanning="True">
+                        </chart:ChartZoomPanBehavior>
+                    </chart:SfChart.Behaviors>
+
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis FontSize="13" ShowGridLines="False" TickLineSize="0"
+                                            AutoScrollingDelta="8" AutoScrollingMode="Start">
+                            <chart:CategoryAxis.LabelStyle>
+                                <chart:LabelStyle Foreground="White"/>
+                            </chart:CategoryAxis.LabelStyle>
+                        </chart:CategoryAxis>
+                    </chart:SfChart.PrimaryAxis>
+
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis FontSize="13" TickLineSize="0">
+                            <chart:NumericalAxis.LabelStyle>
+                                <chart:LabelStyle Foreground="White"/>
+                            </chart:NumericalAxis.LabelStyle>
+
+                            <chart:NumericalAxis.MajorGridLineStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="StrokeThickness" Value="1"/>
+                                    <Setter Property="Stroke" Value="Gray"/>
+                                    <Setter Property="StrokeDashArray" Value="2,2"/>
+                                </Style>
+                            </chart:NumericalAxis.MajorGridLineStyle>
+
+                            <chart:NumericalAxis.AxisLineStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="StrokeThickness" Value="0"/>
+                                </Style>
+                            </chart:NumericalAxis.AxisLineStyle>
+
+                            <chart:NumericalAxis.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="RUNS" Padding="0,3,0,4" FontSize="14" Foreground="White"/>
+                                </DataTemplate>
+                            </chart:NumericalAxis.HeaderTemplate>
+                        </chart:NumericalAxis>
+                    </chart:SfChart.SecondaryAxis>
+
+                    <chart:ColumnSeries ItemsSource="{Binding Data}" XBindingPath="Name" YBindingPath="Score" 
+                             SegmentSpacing="0.3" Interior="#E9C401" ShowTooltip="True">
+                    </chart:ColumnSeries>
+
+                </chart:SfChart>
+            </Border>
+
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Content="Country" FontSize="18" VerticalAlignment="Center" Foreground="White"
+                       FontWeight="SemiBold" HorizontalContentAlignment="Center"/>
+
+                <comboBox:ComboBoxAdv Grid.Column="1" x:Name="type" HorizontalAlignment="Left"  HorizontalContentAlignment="Center"
+                                      SelectedIndex="{Binding SelectedIndex}" Height="30" Width="160" FontSize="15.5" ItemsSource="{Binding CountryOption}"/>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="80,0,0,0">
+                    <Path Data="{StaticResource PathData1}" Stroke="White" StrokeThickness="2.5">
+                        <Path.RenderTransform>
+                            <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Label Content="Team Wise Stats - 2024"  FontSize="23" Foreground="White" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <Path Grid.Column="3" Data="{StaticResource PathData2}" Stroke="White" StrokeThickness="2" HorizontalAlignment="Right" Margin="0,0,20,0">
+                    <Path.RenderTransform>
+                        <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                    </Path.RenderTransform>
+                </Path>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0" Grid.Column="0" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                        <Label Content="Total Played"  FontSize="17" Foreground="White"/>
+                        <Label Content="{Binding Play}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="1" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Total Wins"  FontSize="17" Foreground="White"/>
+                        <Label Content="{Binding Wins}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="2" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Total Runs Scored"  FontSize="17" Foreground="White"/>
+                        <Label Content="{Binding Runs}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Total no of Catches taken" FontSize="17"  Foreground="White"/>
+                        <Label Content="{Binding CatchValue}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="0" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Total 6s Scored" FontSize="17" Foreground="White"/>
+                        <Label Content="{Binding Score6s}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="1" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Total 4s Scored" FontSize="17" Foreground="White"/>
+                        <Label Content="{Binding Score4s}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Background="#70b872" BorderThickness="2" CornerRadius="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="{Binding BatterImage, Converter={StaticResource ImagePathConverter}}"
+                               Width="240" Height="210" Margin="30,5,0,5"/>
+
+                        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+                            <Label Content="Top Batter "  FontSize="17" HorizontalAlignment="Center" Foreground="White"/>
+                            <Label  Content="{Binding Batter}" FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center" Foreground="White"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="3"  Background="#70b872" BorderThickness="2" CornerRadius="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="{Binding WicketTakerImage, Converter={StaticResource ImagePathConverter}}"
+                               Width="240" Height="210" Margin="30,5,0,5"/>
+                        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+                            <Label Content="Top Wicket Taker "  FontSize="17" HorizontalAlignment="Center" Foreground="White"/>
+                            <Label Content="{Binding WicketTaker}" FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center" Foreground="White"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Runs Scored by Boundaries "  FontSize="17" Foreground="White"/>
+                        <Label Content="{Binding Boundaries}" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White" FontSize="17"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+    
+</Window>
