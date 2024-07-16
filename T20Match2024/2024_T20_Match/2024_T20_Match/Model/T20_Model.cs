@@ -1,6 +1,6 @@
 ﻿namespace _2024_T20_Match
 {
-    public class T20_Model
+    public class PlayersData
     {
         public string? Name { get; set; }
         public int Score { get; set; }

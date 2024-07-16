@@ -98,15 +98,15 @@ namespace _2024_T20_Match
             set { wicketTakerImage = value; OnPropertyChanged(); }
         }
 
-        private ObservableCollection<T20_Model> data;
-        public ObservableCollection<T20_Model> Data
+        private ObservableCollection<PlayersData> data;
+        public ObservableCollection<PlayersData> Data
         {
             get => data;
             set { data = value; OnPropertyChanged(); }
         }
 
         private Dictionary<string, CountryData> countryData;
-        private Dictionary<string, List<T20_Model>> playersData;
+        private Dictionary<string, List<PlayersData>> playersData;
         public ObservableCollection<string> CountryOption { get; set; }
 
         public T20_Data()
@@ -124,7 +124,7 @@ namespace _2024_T20_Match
             using (var stream = executingAssembly.GetManifestResourceStream("_2024_T20_Match.Resources.players_data.json"))
             using (var textStream = new StreamReader(stream))
             {
-                playersData = JsonConvert.DeserializeObject<Dictionary<string, List<T20_Model>>>(textStream.ReadToEnd().Trim());
+                playersData = JsonConvert.DeserializeObject<Dictionary<string, List<PlayersData>>>(textStream.ReadToEnd().Trim());
             }
 
             SelectedIndex = 0;
@@ -153,7 +153,7 @@ namespace _2024_T20_Match
 
                 if (playersData.ContainsKey(selectedCountry))
                 {
-                    Data = new ObservableCollection<T20_Model>(playersData[selectedCountry]);
+                    Data = new ObservableCollection<PlayersData>(playersData[selectedCountry]);
                 }
             }
         }
