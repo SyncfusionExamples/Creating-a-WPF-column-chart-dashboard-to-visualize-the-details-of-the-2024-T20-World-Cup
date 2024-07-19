@@ -22,7 +22,7 @@
         <local:ImagePathConverter x:Key="ImagePathConverter"/>
     </Window.Resources>
 
-    <Border Margin="20" Padding="7" BorderThickness="2" CornerRadius="10" Background="#48944b" BorderBrush="#b0b8bf">
+    <Border Margin="20" Padding="7" BorderThickness="2" CornerRadius="10" Background="#007B53" BorderBrush="#b0b8bf">
 
         <Grid>
             <Grid.RowDefinitions>
@@ -31,11 +31,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="2" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+            <Border Grid.Row="2" Background="#005F3E" BorderThickness="2" CornerRadius="10">
                 <chart:SfChart HorizontalHeaderAlignment="Left">
 
                     <chart:SfChart.Header>
-                        <Label Content="Top Runs Scorers" FontSize="15" Margin="5,0,0,0" FontWeight="SemiBold" Foreground="White"/>
+                        <Label Content="Top Runs Scorers" FontSize="15" Margin="5,0,0,0" FontWeight="SemiBold" Foreground="#FFFFFF"/>
                     </chart:SfChart.Header>
 
                     <chart:SfChart.Behaviors>
@@ -48,7 +48,7 @@
                         <chart:CategoryAxis FontSize="13" ShowGridLines="False" TickLineSize="0"
                                             AutoScrollingDelta="8" AutoScrollingMode="Start">
                             <chart:CategoryAxis.LabelStyle>
-                                <chart:LabelStyle Foreground="White"/>
+                                <chart:LabelStyle Foreground="#FFFFFF"/>
                             </chart:CategoryAxis.LabelStyle>
                         </chart:CategoryAxis>
                     </chart:SfChart.PrimaryAxis>
@@ -56,7 +56,7 @@
                     <chart:SfChart.SecondaryAxis>
                         <chart:NumericalAxis FontSize="13" TickLineSize="0">
                             <chart:NumericalAxis.LabelStyle>
-                                <chart:LabelStyle Foreground="White"/>
+                                <chart:LabelStyle Foreground="#FFFFFF"/>
                             </chart:NumericalAxis.LabelStyle>
 
                             <chart:NumericalAxis.MajorGridLineStyle>
@@ -75,14 +75,14 @@
 
                             <chart:NumericalAxis.HeaderTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="RUNS" Padding="0,3,0,4" FontSize="14" Foreground="White"/>
+                                    <TextBlock Text="RUNS" Padding="0,3,0,4" FontSize="14" Foreground="#FFFFFF"/>
                                 </DataTemplate>
                             </chart:NumericalAxis.HeaderTemplate>
                         </chart:NumericalAxis>
                     </chart:SfChart.SecondaryAxis>
 
                     <chart:ColumnSeries ItemsSource="{Binding Data}" XBindingPath="Name" YBindingPath="Score" 
-                             SegmentSpacing="0.3" Interior="#E9C401" ShowTooltip="True">
+                             SegmentSpacing="0.3" Interior="#EDFF23" ShowTooltip="True">
                     </chart:ColumnSeries>
 
                 </chart:SfChart>
@@ -96,22 +96,22 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" Content="Country" FontSize="18" VerticalAlignment="Center" Foreground="White"
+                <Label Grid.Column="0" Content="Country" FontSize="18" VerticalAlignment="Center" Foreground="#FFFFFF"
                        FontWeight="SemiBold" HorizontalContentAlignment="Center"/>
 
                 <comboBox:ComboBoxAdv Grid.Column="1" x:Name="type" HorizontalAlignment="Left"  HorizontalContentAlignment="Center"
                                       SelectedIndex="{Binding SelectedIndex}" Height="30" Width="160" FontSize="15.5" ItemsSource="{Binding CountryOption}"/>
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="80,0,0,0">
-                    <Path Data="{StaticResource PathData1}" Stroke="White" StrokeThickness="2.5">
+                    <Path Data="{StaticResource PathData1}" Stroke="#FFFFFF" StrokeThickness="2.5">
                         <Path.RenderTransform>
                             <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
                         </Path.RenderTransform>
                     </Path>
-                    <Label Content="Team Wise Stats - 2024"  FontSize="23" Foreground="White" Margin="10,0,0,0"/>
+                    <Label Content="Team Wise Stats - 2024"  FontSize="23" Foreground="#FFFFFF" Margin="10,0,0,0"/>
                 </StackPanel>
 
-                <Path Grid.Column="3" Data="{StaticResource PathData2}" Stroke="White" StrokeThickness="2" HorizontalAlignment="Right" Margin="0,0,20,0">
+                <Path Grid.Column="3" Data="{StaticResource PathData2}" Stroke="#FFFFFF" StrokeThickness="2" HorizontalAlignment="Right" Margin="0,0,20,0">
                     <Path.RenderTransform>
                         <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
                     </Path.RenderTransform>
@@ -132,49 +132,49 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.Row="0" Grid.Column="0" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                <Border Grid.Row="0" Grid.Column="0" Background="#005F3E" BorderThickness="2" CornerRadius="10">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-                        <Label Content="Total Played"  FontSize="17" Foreground="White"/>
-                        <Label Content="{Binding Play}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                        <Label Content="Total Played"  FontSize="17" Foreground="#FFFFFF"/>
+                        <Label Content="{Binding Play}" FontSize="19" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="#5AFEC9"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Row="0" Grid.Column="1" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                <Border Grid.Row="0" Grid.Column="1" Background="#005F3E" BorderThickness="2" CornerRadius="10">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Label Content="Total Wins"  FontSize="17" Foreground="White"/>
-                        <Label Content="{Binding Wins}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                        <Label Content="Total Wins"  FontSize="17" Foreground="#FFFFFF"/>
+                        <Label Content="{Binding Wins}" FontSize="19" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="#5AFEC9"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Row="0" Grid.Column="2" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                <Border Grid.Row="0" Grid.Column="2" Background="#005F3E" BorderThickness="2" CornerRadius="10">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Label Content="Total Runs Scored"  FontSize="17" Foreground="White"/>
-                        <Label Content="{Binding Runs}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                        <Label Content="Total Runs Scored"  FontSize="17" Foreground="#FFFFFF"/>
+                        <Label Content="{Binding Runs}" FontSize="19" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="#5AFEC9"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                <Border Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Background="#005F3E" BorderThickness="2" CornerRadius="10">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Label Content="Total no of Catches taken" FontSize="17"  Foreground="White"/>
-                        <Label Content="{Binding CatchValue}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                        <Label Content="Total no of Catches taken" FontSize="17"  Foreground="#FFFFFF"/>
+                        <Label Content="{Binding CatchValue}" FontSize="19" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="#5AFEC9"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Row="1" Grid.Column="0" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                <Border Grid.Row="1" Grid.Column="0" Background="#005F3E" BorderThickness="2" CornerRadius="10">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Label Content="Total 6s Scored" FontSize="17" Foreground="White"/>
-                        <Label Content="{Binding Score6s}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                        <Label Content="Total 6s Scored" FontSize="17" Foreground="#FFFFFF"/>
+                        <Label Content="{Binding Score6s}" FontSize="19" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="#5AFEC9"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Row="1" Grid.Column="1" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                <Border Grid.Row="1" Grid.Column="1" Background="#005F3E" BorderThickness="2" CornerRadius="10">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Label Content="Total 4s Scored" FontSize="17" Foreground="White"/>
-                        <Label Content="{Binding Score4s}" FontSize="17" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White"/>
+                        <Label Content="Total 4s Scored" FontSize="17" Foreground="#FFFFFF"/>
+                        <Label Content="{Binding Score4s}" FontSize="19" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="#5AFEC9"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Background="#70b872" BorderThickness="2" CornerRadius="10">
+                <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Background="#034D33" BorderThickness="2" CornerRadius="10">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -185,13 +185,13 @@
                                Width="240" Height="210" Margin="30,5,0,5"/>
 
                         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
-                            <Label Content="Top Batter "  FontSize="17" HorizontalAlignment="Center" Foreground="White"/>
-                            <Label  Content="{Binding Batter}" FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center" Foreground="White"/>
+                            <Label Content="Top Batter "  FontSize="17" HorizontalAlignment="Center" Foreground="#FFFFFF"/>
+                            <Label  Content="{Binding Batter}" FontSize="19" FontWeight="SemiBold" HorizontalAlignment="Center" Foreground="#5AFEC9"/>
                         </StackPanel>
                     </Grid>
                 </Border>
 
-                <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="3"  Background="#70b872" BorderThickness="2" CornerRadius="10">
+                <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="3"  Background="#034D33" BorderThickness="2" CornerRadius="10">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -201,16 +201,16 @@
                         <Image Grid.Column="0" Source="{Binding WicketTakerImage, Converter={StaticResource ImagePathConverter}}"
                                Width="240" Height="210" Margin="30,5,0,5"/>
                         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
-                            <Label Content="Top Wicket Taker "  FontSize="17" HorizontalAlignment="Center" Foreground="White"/>
-                            <Label Content="{Binding WicketTaker}" FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center" Foreground="White"/>
+                            <Label Content="Top Wicket Taker "  FontSize="17" HorizontalAlignment="Center" Foreground="#FFFFFF"/>
+                            <Label Content="{Binding WicketTaker}" FontSize="19" FontWeight="SemiBold" HorizontalAlignment="Center" Foreground="#5AFEC9"/>
                         </StackPanel>
                     </Grid>
                 </Border>
 
-                <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="#2a512c" BorderThickness="2" CornerRadius="10">
+                <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="#005F3E" BorderThickness="2" CornerRadius="10">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Label Content="Runs Scored by Boundaries "  FontSize="17" Foreground="White"/>
-                        <Label Content="{Binding Boundaries}" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="White" FontSize="17"/>
+                        <Label Content="Runs Scored by Boundaries "  FontSize="17" Foreground="#FFFFFF"/>
+                        <Label Content="{Binding Boundaries}" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="#5AFEC9" FontSize="19"/>
                     </StackPanel>
                 </Border>
             </Grid>
