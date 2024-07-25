@@ -25,6 +25,7 @@ This article explain how to create a rich dashboard to visualize data from the T
 The following chart visually presents the discussed data, offering a clear comparison of the T20 World Cup 2024 data, allowing you to gain insights at a glance.
 
 # Output 
+<img width="945" alt="Image" src="https://github.com/user-attachments/assets/46176ae1-7f8d-421e-8e21-d82f9be85e80">
 
 ## Troubleshooting
 
@@ -32,4 +33,4 @@ The following chart visually presents the discussed data, offering a clear compa
 
 If you are facing a path too long exception when building this example project, close Visual Studio and rename the repository to a shorter name before building the project.
 
-For a step-by-step procedure, refer to the [2024 - T20 Blog]().
+For a step-by-step procedure, refer to the [2024 - T20 Blog](https://www.syncfusion.com/blogs/post/wpf-charts-2024-t20-world-cup-data).
